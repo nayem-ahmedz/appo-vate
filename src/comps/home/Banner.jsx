@@ -4,7 +4,7 @@ import HeroImg from '../../assets/hero.png';
 
 export default function Banner() {
     return (
-        <section className="hero bg-base-200 pt-10 md:pt-20">
+        <section className="hero bg-base-200">
             <div className="hero-content text-center pb-0">
                 <div>
                     <h2 className="text-4xl lg:text-7xl/22 font-bold">

@@ -5,10 +5,10 @@ export default function Header() {
     const navLinks = [
         { id: 1, url: '/', text: 'Home' },
         { id: 2, url: '/apps', text: 'Apps' },
-        { id: 3, url: '/installs', text: 'Installation' }
+        { id: 3, url: '/installation', text: 'Installation' }
     ];
     return (
-        <header className="bg-white shadow-sm">
+        <header className="bg-white shadow-sm mb-10 md:mb-20">
             <nav className="navbar containerr py-4">
                 <div className="navbar-start">
                     <div className="dropdown">

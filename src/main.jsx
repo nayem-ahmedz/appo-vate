@@ -4,6 +4,9 @@ import './index.css'
 import App from './App.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router'
 import Home from './comps/home/Home.jsx'
+import Apps from './pages/Apps.jsx'
+import Installation from './pages/Installation.jsx'
+import NoPage from './pages/NoPage.jsx'
 
 const router = createBrowserRouter([
   {
@@ -11,8 +14,9 @@ const router = createBrowserRouter([
     Component: App,
     children: [
       { index: true, Component: Home},
-      { path: '/apps', element: <h1>Apps</h1> },
-      { path: '/install', element: <h1>install</h1>}
+      { path: '/apps', Component: Apps },
+      { path: '/installation', Component: Installation},
+      { path: '/*', Component: NoPage }
     ]
   }
 ]);

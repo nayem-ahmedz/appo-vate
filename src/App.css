@@ -1,0 +1,30 @@
+.containerr{
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+}
+nav a{
+    font-size: 1rem;
+    font-weight: 600;
+}
+.active{
+    text-decoration: 1px solid rgba(99, 46, 227, 1) underline;
+    text-underline-offset: 3px;
+    color: transparent;
+    background-image: linear-gradient(125.07deg, rgba(99, 46, 227, 1),rgba(159, 98, 242, 1) 100%);
+    background-clip: text;
+}
+.gradient-primary{
+    background-image: linear-gradient(125.07deg, rgba(99, 46, 227, 1),rgba(159, 98, 242, 1) 100%);
+}
+.primary-btn{
+    color: white;
+    background-image: linear-gradient(125deg, rgba(99,46,227,1), rgba(159,98,242,1));
+}
+
+/* banner */
+.banner-title{
+    color: transparent;
+    background-image: linear-gradient(125.07deg, rgba(99, 46, 227, 1),rgba(159, 98, 242, 1) 100%);
+    background-clip: text;
+}

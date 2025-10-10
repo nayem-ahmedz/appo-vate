@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "image": "https://cdn-icons-png.flaticon.com/512/124/124010.png",
+    "image": "https://img.freepik.com/premium-vector/vector-facebook-social-media-icon-illustration_534308-21672.jpg?semt=ais_hybrid&w=740&q=80",
     "title": "Facebook",
     "companyName": "Meta Platforms Inc.",
     "description": "Connect with friends, share updates, and join communities worldwide.",
@@ -19,7 +19,7 @@
   },
   {
     "id": 2,
-    "image": "https://cdn-icons-png.flaticon.com/512/2111/2111463.png",
+    "image": "https://img.freepik.com/premium-vector/instagram-logo-vector_768467-330.jpg?semt=ais_hybrid&w=740&q=80",
     "title": "Instagram",
     "companyName": "Meta Platforms Inc.",
     "description": "Share photos, stories, and reels with your friends and followers.",
@@ -37,7 +37,7 @@
   },
   {
     "id": 3,
-    "image": "https://cdn-icons-png.flaticon.com/512/174/174857.png",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRokEYt0yyh6uNDKL8uksVLlhZ35laKNQgZ9g&s",
     "title": "LinkedIn",
     "companyName": "LinkedIn Corporation",
     "description": "Build your professional network, find jobs, and grow your career.",
@@ -55,7 +55,7 @@
   },
   {
     "id": 4,
-    "image": "https://cdn-icons-png.flaticon.com/512/733/733585.png",
+    "image": "https://img.freepik.com/premium-vector/new-twitter-logo-x-2023-twitter-x-logo-vector-download_691560-10806.jpg",
     "title": "Twitter (X)",
     "companyName": "X Corp.",
     "description": "Stay informed with real-time updates, discussions, and trending news.",
@@ -73,7 +73,7 @@
   },
   {
     "id": 5,
-    "image": "https://cdn-icons-png.flaticon.com/512/174/174872.png",
+    "image": "https://img.freepik.com/premium-vector/youtube-color-icons_1209566-1.jpg?semt=ais_hybrid&w=740&q=80",
     "title": "YouTube",
     "companyName": "Google LLC",
     "description": "Watch, upload, and share videos with millions of users worldwide.",
@@ -91,7 +91,7 @@
   },
   {
     "id": 6,
-    "image": "https://cdn-icons-png.flaticon.com/512/2111/2111628.png",
+    "image": "https://static.vecteezy.com/system/resources/previews/055/138/452/non_2x/spotify-logo-square-rounded-spotify-logo-spotify-logo-free-download-free-png.png",
     "title": "Spotify",
     "companyName": "Spotify AB",
     "description": "Stream millions of songs and podcasts from artists around the globe.",
@@ -109,7 +109,7 @@
   },
   {
     "id": 7,
-    "image": "https://cdn-icons-png.flaticon.com/512/5968/5968841.png",
+    "image": "https://yt3.googleusercontent.com/CvgBA1ypUZNxOjiCX0l1V2FbAm7oSDPZE4YkMvkpT_4iLXQ3IXWVtBgWnznHxgtcUoj50TXqZA=s900-c-k-c0x00ffffff-no-rj",
     "title": "Netflix",
     "companyName": "Netflix Inc.",
     "description": "Stream movies, TV shows, and documentaries anytime, anywhere.",
@@ -127,7 +127,7 @@
   },
   {
     "id": 8,
-    "image": "https://cdn-icons-png.flaticon.com/512/732/732221.png",
+    "image": "https://downloadr2.apkmirror.com/wp-content/uploads/2020/10/91/5f9b61e42640e.png",
     "title": "Gmail",
     "companyName": "Google LLC",
     "description": "Fast, secure email app with smart inbox and Google integration.",
@@ -145,7 +145,7 @@
   },
   {
     "id": 9,
-    "image": "https://cdn-icons-png.flaticon.com/512/5968/5968830.png",
+    "image": "https://store-images.s-microsoft.com/image/apps.8453.13655054093851568.4a371b72-2ce8-4bdb-9d83-be49894d3fa0.7f3687b9-847d-4f86-bb5c-c73259e2b38e",
     "title": "WhatsApp",
     "companyName": "Meta Platforms Inc.",
     "description": "Send text, voice, and video messages instantly around the world.",
@@ -163,7 +163,7 @@
   },
   {
     "id": 10,
-    "image": "https://cdn-icons-png.flaticon.com/512/888/888853.png",
+    "image": "https://p16-va-tiktok.ibyteimg.com/obj/musically-maliva-obj/4a953b362d24032d2d825d791cc5771d",
     "title": "TikTok",
     "companyName": "ByteDance Ltd.",
     "description": "Create and share short videos with effects, music, and filters.",
@@ -181,7 +181,7 @@
   },
   {
     "id": 11,
-    "image": "https://cdn-icons-png.flaticon.com/512/732/732200.png",
+    "image": "https://yt3.googleusercontent.com/ytc/AIdro_mZGy0ZLktn9NL_4__5MbK49kpYHU8YPkUgvvdpPxt3O6Q=s900-c-k-c0x00ffffff-no-rj",
     "title": "Google Maps",
     "companyName": "Google LLC",
     "description": "Navigate the world with live maps, GPS, and real-time traffic updates.",
@@ -199,7 +199,7 @@
   },
   {
     "id": 12,
-    "image": "https://cdn-icons-png.flaticon.com/512/174/174881.png",
+    "image": "https://yt3.googleusercontent.com/ytc/AIdro_kuTpSCgNslJfl3YWfrSoyP6c4ouoMZ9R8yRy2e0T2TlXdw=s900-c-k-c0x00ffffff-no-rj",
     "title": "Pinterest",
     "companyName": "Pinterest Inc.",
     "description": "Discover new ideas and inspiration for your interests and projects.",
@@ -217,7 +217,7 @@
   },
   {
     "id": 13,
-    "image": "https://cdn-icons-png.flaticon.com/512/732/732205.png",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Google_Drive_icon_%282020%29.svg/1200px-Google_Drive_icon_%282020%29.svg.png",
     "title": "Google Drive",
     "companyName": "Google LLC",
     "description": "Secure cloud storage for your files, photos, and documents.",
@@ -235,7 +235,7 @@
   },
   {
     "id": 14,
-    "image": "https://cdn-icons-png.flaticon.com/512/174/174855.png",
+    "image": "https://img.freepik.com/premium-photo/square-skype-logo-isolated-white-background_469489-1033.jpg",
     "title": "Skype",
     "companyName": "Microsoft Corporation",
     "description": "Make voice and video calls or chat with people across the world.",
@@ -253,7 +253,7 @@
   },
   {
     "id": 15,
-    "image": "https://cdn-icons-png.flaticon.com/512/888/888882.png",
+    "image": "https://store-images.s-microsoft.com/image/apps.64248.14208673485779370.88f23073-7e41-4921-aef9-76103983bd31.714459aa-91a6-45a3-a7ed-1f6a283c93fd",
     "title": "Snapchat",
     "companyName": "Snap Inc.",
     "description": "Share quick photos and videos that disappear after viewing.",
@@ -271,7 +271,7 @@
   },
   {
     "id": 16,
-    "image": "https://cdn-icons-png.flaticon.com/512/174/174879.png",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_dbOUeCrOBe-mkfGD-fEjQNECJrkromWTYg&s",
     "title": "Telegram",
     "companyName": "Telegram FZ-LLC",
     "description": "Fast, secure, and cloud-based messaging app with large group support.",

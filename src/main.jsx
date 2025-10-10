@@ -7,15 +7,17 @@ import Home from './comps/home/Home.jsx'
 import Apps from './pages/Apps.jsx'
 import Installation from './pages/Installation.jsx'
 import NoPage from './pages/NoPage.jsx'
+import AppDetails from './pages/AppDetails.jsx'
 
 const router = createBrowserRouter([
   {
     path: '/',
     Component: App,
     children: [
-      { index: true, Component: Home},
+      { index: true, Component: Home },
       { path: '/apps', Component: Apps },
-      { path: '/installation', Component: Installation},
+      { path: '/installation', Component: Installation },
+      { path: '/apps/:id', loader: () => fetch('/data.json'), Component: AppDetails },
       { path: '/*', Component: NoPage }
     ]
   }

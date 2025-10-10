@@ -14,6 +14,11 @@ nav a{
     background-image: linear-gradient(125.07deg, rgba(99, 46, 227, 1),rgba(159, 98, 242, 1) 100%);
     background-clip: text;
 }
+.text-gradient{
+    color: transparent;
+    background-image: linear-gradient(125.07deg, rgba(99, 46, 227, 1),rgba(159, 98, 242, 1) 100%);
+    background-clip: text;
+}
 .gradient-primary{
     background-image: linear-gradient(125.07deg, rgba(99, 46, 227, 1),rgba(159, 98, 242, 1) 100%);
 }

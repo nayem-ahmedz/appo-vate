@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router';
 import Logo from '../../assets/logo.png';
+import { Link } from 'react-router';
 
 export default function Header() {
     const navLinks = [
@@ -23,10 +24,10 @@ export default function Header() {
                             }
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">
+                    <Link className="btn btn-ghost text-xl" to='/'>
                         <img src={Logo} alt="appovate logo" className='w-10 h-10' />
                         AppoVate
-                    </a>
+                    </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -36,7 +37,7 @@ export default function Header() {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn primary-btn"> <i className="fa-brands fa-github"></i> Contribute</a>
+                    <a href="https://github.com/nayem-ahmedz" target="_blank" rel="noopener noreferrer" className="btn primary-btn"> <i className="fa-brands fa-github"></i> Contribute</a>
                 </div>
             </nav>
         </header>

@@ -8,7 +8,7 @@
     "size": 95,
     "reviews": 78000,
     "ratingAvg": 4.2,
-    "downloads": 95000,
+    "downloads": 95400,
     "ratings": [
       { "name": "1 star", "count": 4000 },
       { "name": "2 star", "count": 5000 },
@@ -26,7 +26,7 @@
     "size": 85,
     "reviews": 67000,
     "ratingAvg": 4.5,
-    "downloads": 90000,
+    "downloads": 92000,
     "ratings": [
       { "name": "1 star", "count": 2500 },
       { "name": "2 star", "count": 3500 },
@@ -62,7 +62,7 @@
     "size": 68,
     "reviews": 49000,
     "ratingAvg": 4.0,
-    "downloads": 76000,
+    "downloads": 76500,
     "ratings": [
       { "name": "1 star", "count": 3500 },
       { "name": "2 star", "count": 4000 },
@@ -98,7 +98,7 @@
     "size": 90,
     "reviews": 62000,
     "ratingAvg": 4.7,
-    "downloads": 88000,
+    "downloads": 87400,
     "ratings": [
       { "name": "1 star", "count": 1500 },
       { "name": "2 star", "count": 2000 },
@@ -114,15 +114,15 @@
     "companyName": "Netflix Inc.",
     "description": "Stream movies, TV shows, and documentaries anytime, anywhere.",
     "size": 115,
-    "reviews": 71000,
+    "reviews": 71100,
     "ratingAvg": 4.5,
-    "downloads": 95000,
+    "downloads": 85000,
     "ratings": [
-      { "name": "1 star", "count": 2500 },
-      { "name": "2 star", "count": 3000 },
+      { "name": "1 star", "count": 40300 },
+      { "name": "2 star", "count": 21500 },
       { "name": "3 star", "count": 5500 },
-      { "name": "4 star", "count": 20000 },
-      { "name": "5 star", "count": 40000 }
+      { "name": "4 star", "count": 2000 },
+      { "name": "5 star", "count": 1000 }
     ]
   },
   {
@@ -134,7 +134,7 @@
     "size": 65,
     "reviews": 68000,
     "ratingAvg": 4.3,
-    "downloads": 90000,
+    "downloads": 90600,
     "ratings": [
       { "name": "1 star", "count": 3000 },
       { "name": "2 star", "count": 4000 },

@@ -4,6 +4,9 @@ import StarIcon from '../assets/icon-ratings.png';
 import RvIcon from '../assets/icon-review.png';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer } from 'recharts';
 import AppErrorImage from '../assets/App-Error.png';
+import { useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import { addToCart, getCart } from "../comps/utils/manageLocalStorage";
 
 export default function AppDetails() {
     const params = useParams();
@@ -11,11 +14,27 @@ export default function AppDetails() {
     const data = useLoaderData();
     const app = data.find(d => d.id === id);
     if (app) {
+        const [installed, setInstalled] = useState(getCart().includes(app.id));
+        const totalRatings = app.ratings.reduce((sum, rate) => sum + rate.count, 0);
+        const handleInstall = () => {
+            setInstalled(true)
+            toast.success(`${app.title} is installed!`, {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
+            addToCart(app.id); // add app id to local storage
+        }
         return (
             <section className="containerr px-4">
                 <div className="flex flex-col lg:flex-row gap-5 md:gap-10 pb-8 border-b-2 border-gray-300">
-                    <div className="w-[350px] h-[350px] bg-gray-500">
-                        <img src={app.image} alt={app.title} className="w-full h-full " onError={e => {
+                    <div className="aspect-square max-w-[350px] grow shrink-0 bg-gray-500">
+                        <img src={app.image} alt={app.title} className="w-full h-full" onError={e => {
                             e.target.onerror = null;
                             e.target.src = '/default-image.png';
                         }} />
@@ -27,12 +46,12 @@ export default function AppDetails() {
                             <div className="flex flex-col gap-2">
                                 <img src={DwIcon} alt="download icon" className="w-10 h-10" />
                                 <div>Total Downloads</div>
-                                <div className="stat-value text-3xl md:text-[40px]">29.6M</div>
+                                <div className="stat-value text-3xl md:text-[40px]"> {Number((app.downloads / 1000).toFixed(1))} K</div>
                             </div>
                             <div className="flex flex-col gap-2">
                                 <img src={StarIcon} alt="star icon" className="w-10 h-10" />
                                 <div>Total Reviews</div>
-                                <div className="stat-value text-3xl md:text-[40px] ">906K</div>
+                                <div className="stat-value text-3xl md:text-[40px] ">{Number((totalRatings / 1000).toFixed(1))} K</div>
                             </div>
                             <div className="flex flex-col gap-2">
                                 <img src={RvIcon} alt="review icon" className="w-10 h-10" />
@@ -40,7 +59,9 @@ export default function AppDetails() {
                                 <div className="stat-value text-3xl md:text-[40px]">132+</div>
                             </div>
                         </div>
-                        <button className="btn bg-[#00D390] text-white mt-7">Install Now ({app.size}) </button>
+                        <button className="btn bg-[#00D390] text-white mt-7 hover:bg-green-700" onClick={handleInstall} disabled={installed}>
+                            {installed ? 'Installed' : `Install Now (${app.size} MB)`}
+                        </button>
                     </div>
 
                 </div>
@@ -73,9 +94,21 @@ export default function AppDetails() {
                         A unique feature of this app is the integration of task lists with timers. You can assign each task to a specific Pomodoro session, making your schedule more structured. The built-in analytics show not only how much time you’ve worked but also which tasks consumed the most energy. This allows you to reflect on your efficiency and adjust your workflow accordingly. The app also includes optional background sounds such as white noise, nature sounds, or instrumental music to create a distraction-free atmosphere.
                         <br />
                         <br />
-                        For people who struggle with procrastination, the app provides motivational streaks and achievements. Completing multiple Pomodoro sessions unlocks milestones, giving a sense of accomplishment. This gamified approach makes focusing more engaging and less like a chore. Whether you’re studying for exams, coding, writing, or handling office work, the app adapts to your routine. By combining focus tracking, task management, and motivational tools, this Pomodoro app ensures that you not only work harder but also smarter. It is a personal trainer for your brain, keeping you disciplined, refreshed, and productive throughout the day.
+                        For people who struggle with procrastination, the app provides motivational streaks and achievements. Completing multiple Pomodoro sessions unlocks milestones, giving a sense of accomplishment. This gamified approach makes focusing more engaging and less like a chore. Whether you're studying for exams, coding, writing, or handling office work, the app adapts to your routine. By combining focus tracking, task management, and motivational tools, this Pomodoro app ensures that you not only work harder but also smarter. It is a personal trainer for your brain, keeping you disciplined, refreshed, and productive throughout the day.
                     </p>
                 </div>
+                <ToastContainer
+                    position="top-right"
+                    autoClose={5000}
+                    hideProgressBar={false}
+                    newestOnTop
+                    closeOnClick={false}
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                    theme="dark"
+                />
             </section>
         );
     } else {

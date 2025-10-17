@@ -9,18 +9,17 @@ const dataPromise = async() => {
 };
 
 export default function AllApps() {
-    // const handleSearch = (keys) => {
-    //     const matchedApps = apps.filter(app => app.title.includes(keys));
-    //     setApps(matchedApps);
-    // }
+    const [search, setSearch] = useState('');
+    const handleSearch = (e) => setSearch(e.target.value);
+    const [totalApps, setTotalApps] = useState(0);
     return (
         <>
             <div className="flex flex-col sm:flex-row-reverse justify-between items-center gap-4 mt-10">
-                <SearchBar />
-                <h4>() Apps Found</h4>
+                <SearchBar handleSearch={handleSearch} />
+                <h4 className="font-semibold text-2xl">{totalApps} Apps Found</h4>
             </div>
             <Suspense fallback={<Loading />}>
-                <AppGallery dataPromise={dataPromise()} />
+                <AppGallery dataPromise={dataPromise()} updateTotalApps={(count) => setTotalApps(count)} search={search} />
             </Suspense>
         </>
     );

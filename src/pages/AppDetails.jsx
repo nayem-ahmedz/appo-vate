@@ -5,7 +5,7 @@ import RvIcon from '../assets/icon-review.png';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer } from 'recharts';
 import AppErrorImage from '../assets/App-Error.png';
 import { useState } from "react";
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import { addToCart, getCart } from "../comps/utils/manageLocalStorage";
 
 export default function AppDetails() {
@@ -32,6 +32,7 @@ export default function AppDetails() {
         }
         return (
             <section className="containerr px-4">
+                <title>App Details</title>
                 <div className="flex flex-col lg:flex-row gap-5 md:gap-10 pb-8 border-b-2 border-gray-300">
                     <div className="aspect-square max-w-[350px] grow shrink-0 bg-gray-500">
                         <img src={app.image} alt={app.title} className="w-full h-full" onError={e => {
@@ -88,27 +89,15 @@ export default function AppDetails() {
                 <div className="mt-8">
                     <h3 className="text-2xl font-semibold mb-4">Description</h3>
                     <p className="md:text-xl/8 text-[#627382]">
-                        This focus app takes the proven Pomodoro technique and makes it even more practical for modern lifestyles. Instead of just setting a timer, it builds a complete environment for deep work, minimizing distractions and maximizing concentration. Users can create custom work and break intervals, track how many sessions they complete each day, and review detailed statistics about their focus habits over time. The design is minimal and calming, reducing cognitive load so you can focus entirely on the task at hand. Notifications gently let you know when to pause and when to resume, helping you maintain a healthy rhythm between work and rest.
+                        { app.description }
                         <br />
                         <br />
-                        A unique feature of this app is the integration of task lists with timers. You can assign each task to a specific Pomodoro session, making your schedule more structured. The built-in analytics show not only how much time you’ve worked but also which tasks consumed the most energy. This allows you to reflect on your efficiency and adjust your workflow accordingly. The app also includes optional background sounds such as white noise, nature sounds, or instrumental music to create a distraction-free atmosphere.
+                        { app.description.split(' ').reverse().join(' ') }
                         <br />
                         <br />
-                        For people who struggle with procrastination, the app provides motivational streaks and achievements. Completing multiple Pomodoro sessions unlocks milestones, giving a sense of accomplishment. This gamified approach makes focusing more engaging and less like a chore. Whether you're studying for exams, coding, writing, or handling office work, the app adapts to your routine. By combining focus tracking, task management, and motivational tools, this Pomodoro app ensures that you not only work harder but also smarter. It is a personal trainer for your brain, keeping you disciplined, refreshed, and productive throughout the day.
+                        { app.description }
                     </p>
                 </div>
-                <ToastContainer
-                    position="top-right"
-                    autoClose={5000}
-                    hideProgressBar={false}
-                    newestOnTop
-                    closeOnClick={false}
-                    rtl={false}
-                    pauseOnFocusLoss
-                    draggable
-                    pauseOnHover
-                    theme="dark"
-                />
             </section>
         );
     } else {

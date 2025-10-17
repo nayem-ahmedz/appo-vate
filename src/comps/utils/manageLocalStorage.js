@@ -21,7 +21,6 @@ const removeFromCart = appId => {
 }
 
 const updateCart = (cart) => {
-    console.log(cart);
     const newCart = JSON.stringify(cart);
     localStorage.setItem('appsId', newCart);
 }

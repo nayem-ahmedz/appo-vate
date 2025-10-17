@@ -1,5 +1,5 @@
 import { Download } from "lucide-react";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 
 function CardLandscape({ app, removeApp }) {
     const handleUninstall = () => {
@@ -23,24 +23,12 @@ function CardLandscape({ app, removeApp }) {
             <div className="grow">
                 <h4 className="text-xl font-medium">{app.title}</h4>
                 <div className="flex">
-                    <p className="flex items-center gap-1 text-[#00D390] py-2 px-3 font-medium"> <Download /> 9M</p>
+                    <p className="flex items-center gap-1 text-[#00D390] py-2 px-3 font-medium"> <Download /> { Number((app.downloads / 1000).toFixed(1)) }K</p>
                     <p className="text-[#FF8811] py-2 px-3 font-medium"> <i className="fa-solid fa-star"></i> 5 </p>
                     <p className="text-gray-500 py-2 px-3"> {app.size} MB </p>
                 </div>
             </div>
             <button className="btn bg-[#00D390] text-white" onClick={handleUninstall}>Uninstall</button>
-            <ToastContainer
-                position="top-right"
-                autoClose={5000}
-                hideProgressBar={false}
-                newestOnTop
-                closeOnClick={false}
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-                theme="dark"
-            />
         </div>
     );
 }

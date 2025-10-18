@@ -7,6 +7,7 @@ import Loading from './pages/Loading'
 import { useEffect, useState } from 'react'
 
 function App() {
+  // adding global loading animation effect on page load / navigate
   const navigation = useNavigation();
   const location = useLocation();
   const [isPageLoading, setIsPageLoading] = useState(false);
@@ -16,7 +17,8 @@ function App() {
     return () => clearTimeout(fakeLoading);
   }, [location]);
   const isLoading = navigation.state === 'loading' || isPageLoading;
-  if(isLoading) return <Loading />
+  if (isLoading) return <Loading />
+
   return (
     <>
       <Header />

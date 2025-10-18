@@ -1,11 +1,11 @@
-import { Outlet } from 'react-router'
+import { Outlet, useNavigation } from 'react-router'
 import './App.css'
 import Header from './comps/header/Header'
 import Footer from './comps/footer/Footer'
 import { ToastContainer } from 'react-toastify'
 
 function App() {
-
+  const navigation = useNavigation();
   return (
     <>
       <Header />

@@ -4,6 +4,8 @@ Providing best Android and iOS apps
 ## Overview
 **AppoVate** is a React.js web application that showcases all apps developed by the company Appovate. It mimics a real app store experience with features like browsing featured/trending apps, fake install/uninstall functionality, persistent installed apps via localStorage, and live search. No backend is required as all data is fetched from a JSON file.
 
+![Appovate Screenshot](./public/screenshots/appovate.webp)
+
 ## Features
 - Browse featured and trending apps on homepage
 - Live search for apps

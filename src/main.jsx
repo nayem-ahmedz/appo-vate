@@ -17,7 +17,7 @@ const router = createBrowserRouter([
       { index: true, Component: Home },
       { path: '/apps', Component: Apps },
       { path: '/installation', Component: Installation },
-      { path: '/apps/:id', loader: () => fetch('/data.json'), Component: AppDetails },
+      { path: '/apps/:id', loader: ({params}) => fetch(`${import.meta.env.VITE_BACKEND_URL}/apps/${params.id}`), Component: AppDetails },
       { path: '/*', Component: NoPage }
     ]
   }

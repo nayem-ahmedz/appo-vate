@@ -8,7 +8,7 @@ export default function TrendingAppsGallery({ dataPromise }) {
     return (
         <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 my-10">
             {
-                apps.map(app => <Card key={app.id} app={app} />)
+                apps.map(app => <Card key={app._id} app={app} />)
             }
         </section>
     );

@@ -9,12 +9,9 @@ import { toast } from 'react-toastify';
 import { addToCart, getCart } from "../comps/utils/manageLocalStorage";
 
 export default function AppDetails() {
-    const params = useParams();
-    const id = parseInt(params.id);
-    const data = useLoaderData();
-    const app = data.find(d => d.id === id);
-    if (app) {
-        const [installed, setInstalled] = useState(getCart().includes(app.id));
+    const app = useLoaderData();
+    if (app._id) {
+        const [installed, setInstalled] = useState(getCart().includes(app._id));
         const totalRatings = app.ratings.reduce((sum, rate) => sum + rate.count, 0);
         const handleInstall = () => {
             setInstalled(true)
@@ -28,7 +25,7 @@ export default function AppDetails() {
                 progress: undefined,
                 theme: "dark",
             });
-            addToCart(app.id); // add app id to local storage
+            addToCart(app._id); // add app id to local storage
         }
         return (
             <section className="containerr px-4">

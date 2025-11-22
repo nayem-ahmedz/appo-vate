@@ -22,7 +22,7 @@ export default function AppGallery({ dataPromise, updateTotalApps, search }) {
                     <img src={AppErrorImage} alt='error image' className='w-full max-w-md mx-auto' />
                     <h1 className="text-3xl md:text-5xl font-bold mt-4">No App Found</h1>
                     <p className="py-3 md:py-6 text-[#627382] md:text-xl">Try searching something else</p>
-                </div> : apps.map(app => <Card key={app.id} app={app} />)
+                </div> : apps.map(app => <Card key={app._id} app={app} />)
             }
         </section>
     );

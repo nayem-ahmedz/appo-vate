@@ -13,7 +13,7 @@ function CardLandscape({ app, removeApp }) {
             progress: undefined,
             theme: "dark",
         });
-        removeApp(app.id);
+        removeApp(app._id);
     }
     return (
         <div className="shadow-sm p-4 bg-white rounded-sm transition hover:scale-105 flex justify-center items-center gap-4 flex-wrap">

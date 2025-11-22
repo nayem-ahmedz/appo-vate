@@ -7,7 +7,7 @@ function Card({ app }) {
     const weightedTotalRatings = app.ratings.reduce((sum, rate, index) => sum + (index + 1) * rate.count, 0);
     const avgRatings = (weightedTotalRatings / totalRatings);
     return (
-        <Link to={`/apps/${app.id}`}>
+        <Link to={`/apps/${app._id}`}>
             <div className="shadow-sm p-4 bg-white rounded-sm transition hover:scale-105">
                 <div className="aspect-square bg-gray-300 rounded-xl">
                 <img src={app.image} alt={app.title} className="w-full h-full rounded-xl" />

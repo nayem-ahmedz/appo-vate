@@ -4,7 +4,7 @@ import SearchBar from "../utils/SearchBar";
 import Loading from "../utils/Loading";
 
 const dataPromise = async() => {
-    const response = await fetch('/data.json');
+    const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/apps`);
     return await response.json();
 };
 

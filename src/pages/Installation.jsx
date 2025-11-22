@@ -2,7 +2,7 @@ import { Suspense, useState } from "react";
 import AppGalleryLandscape from "../comps/utils/AppGalleryLandscape";
 import Loading from "../comps/utils/Loading";
 
-const dataPromise = fetch('/data.json').then(res => res.json());
+const dataPromise = fetch(`${import.meta.env.VITE_BACKEND_URL}/apps`).then(res => res.json());
 
 export default function Installation() {
     const [appsCount, setAppsCount] = useState(0);

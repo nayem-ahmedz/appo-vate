@@ -3,7 +3,7 @@ import { Suspense, use } from "react";
 import Loading from "../utils/Loading";
 import TrendingAppsGallery from "../utils/TrendingAppsGallery";
 
-const dataPromise = fetch(`${import.meta.env.VITE_BACKEND_URL}/apps`).then(res => res.json());
+const dataPromise = fetch(`${import.meta.env.VITE_BACKEND_URL}/apps?limit=8`).then(res => res.json());
 
 export default function TrendingApps() {
     return (

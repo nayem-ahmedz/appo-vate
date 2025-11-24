@@ -25,9 +25,9 @@ Showcase Your Apps with Style
 - React.js
 
 ### Back-end
-- **Node.js**
-- **Express Server**
-- **MongoDB** (for storing app data)
+- Node.js
+- Express Server
+- MongoDB (for storing app data)
 
 ### Tools and Libraries
 - Google Fonts API: For stylish typography.
@@ -60,7 +60,7 @@ To run the AppoVate application locally, follow these steps:
    ```
 ## For setting up backend
 The back-end for this project is in a separate repository. You can find it here:
-[Appovate Server Repo](https://appovate.netlify.app/)
+[Appovate Server Repo](https://github.com/nayem-ahmedz/appovate-server)
 
 ## Contributing
 Contributions are welcome! If you have suggestions for improvements, bug fixes, or new features, feel free to open an issue or submit a pull request.

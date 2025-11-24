@@ -8,15 +8,16 @@ import Apps from './pages/Apps.jsx'
 import Installation from './pages/Installation.jsx'
 import NoPage from './pages/NoPage.jsx'
 import AppDetails from './pages/AppDetails.jsx'
+import Error from './comps/utils/Error.jsx'
 
 const router = createBrowserRouter([
   {
     path: '/',
     Component: App,
     children: [
-      { index: true, Component: Home },
+      { index: true, Component: Home, errorElement: <Error /> },
       { path: '/apps', Component: Apps },
-      { path: '/installation', Component: Installation },
+      { path: '/installation', Component: Installation, errorElement: <Error /> },
       { path: '/apps/:id', loader: ({params}) => fetch(`${import.meta.env.VITE_BACKEND_URL}/apps/${params.id}`), Component: AppDetails },
       { path: '/*', Component: NoPage }
     ]

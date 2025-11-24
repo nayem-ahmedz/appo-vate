@@ -5,8 +5,6 @@ import Card from "../card/Card";
 import AppErrorImage from '../../assets/App-Error.png';
 
 export default function AllApps() {
-    const [search, setSearch] = useState('');
-    const handleSearch = (e) => setSearch(e.target.value);
     const [apps, setApps] = useState([]);
     const limit = 8;
     const [totalPages, setTotalPages] = useState(0);
@@ -15,22 +13,52 @@ export default function AllApps() {
     const [totalApps, setTotalApps] = useState(0);
     // manage loading state
     const [loading, setLoading] = useState(true);
+    // manage sort var
+    const [ sort, setSort ] = useState('ratingAvg'); // initial reveiws
+    const [ order, setOrder ] = useState('desc'); // order by higher ratingAvg
+    // search test
+    const [ search, setSearch ] = useState('');
     useEffect(() => {
         setLoading(true);
-        fetch(`${import.meta.env.VITE_BACKEND_URL}/apps?limit=${limit}&skip=${currentPage * limit}`)
+        fetch(`${import.meta.env.VITE_BACKEND_URL}/apps?limit=${limit}&skip=${currentPage * limit}&sort=${sort}&order=${order}&search=${search}`)
             .then(res => res.json())
             .then(data => {
                 // we will receive {total, apps}
                 setApps(data.apps);
                 // total page = total apps / limit
                 setTotalPages(Math.ceil(data.total / limit));
-                setTotalApps(data.total);
+                if(search){
+                    setTotalApps(data.apps.length);
+                } else{
+                    setTotalApps(data.total);
+                }
                 setLoading(false);
             });
-    }, [currentPage]);
+    }, [currentPage, sort, order, search]);
+    // handling sort and order
+    const handleSort = e => {
+        const value = e.target.value.split('-');
+        const sort = value[0];
+        const order = value[1];
+        console.log(sort, order)
+        setSort(sort);
+        setOrder(order);
+        setCurrentPage(0);
+    }
+    // handle search
+    const handleSearch = (e) => setSearch(e.target.value);
     return (
         <>
             <div className="flex flex-col sm:flex-row-reverse justify-between items-center gap-4 mt-10">
+                <select defaultValue="Sort Apps" onChange={handleSort} className="select">
+                    <option disabled={true}>Sort Apps</option>
+                    <option value='size-asc'>Size : Low-High</option>
+                    <option value='size-desc'>Size : High-Low</option>
+                    <option value='ratingAvg-asc'>Ratings : Low-High</option>
+                    <option value='ratingAvg-desc'>Ratings : High-Low</option>
+                    <option value='downloads-asc'>Downloads : Low-High</option>
+                    <option value='downloads-desc'>Downloads : High-Low</option>
+                </select>
                 <SearchBar handleSearch={handleSearch} />
                 <h4 className="font-semibold text-2xl">{totalApps} Apps Found</h4>
             </div>
@@ -46,11 +74,13 @@ export default function AllApps() {
                 </section>
             }
             <div className="flex justify-center">
+                <button className="btn" onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 0}>Prev</button>
                 <div className="join">
                     {
                         [...Array(totalPages).keys()].map(el => <button key={el} onClick={() => setCurrentPage(el)} className={`join-item btn ${currentPage === el && 'btn-primary'}`}> {el + 1} </button>)
                     }
                 </div>
+                <button className="btn" onClick={() => setCurrentPage(currentPage + 1)} disabled={currentPage === totalPages - 1}>Next</button>
             </div>
         </>
     );

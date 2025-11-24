@@ -1,36 +1,47 @@
 # Project Name: AppoVate
-Providing best Android and iOS apps
+Showcase Your Apps with Style
 
 ## Overview
-**AppoVate** is a React.js web application that showcases all apps developed by the company Appovate. It mimics a real app store experience with features like browsing featured/trending apps, fake install/uninstall functionality, persistent installed apps via localStorage, and live search. No backend is required as all data is fetched from a JSON file.
+**AppoVate** is a modern web application built with React.js for the front-end and Node.js with Express for the back-end. It showcases apps developed by the company Appovate, offering a real app store-like experience. Users can browse featured/trending apps, use live search, and simulate installing/uninstalling apps. Now, with the addition of a backend, app data is fetched from a MongoDB database, providing real-time updates and improved scalability
 
 ![Appovate Screenshot](./public/screenshots/appovate.webp)
 
-## Features
-- Browse featured and trending apps on homepage
-- Live search for apps
-- Fake install/uninstall functionality
-- Persistent storage of installed apps using localStorage
-- Responsive design for mobile, tablet, laptop, and desktop
-- Real app store-like UI/UX
+## Key Features
+- **Browse Featured and Trending Apps**: View featured and trending apps fetched from the backend.
+- **All Apps Page**: Access a comprehensive list of all apps with pagination.
+- **Live Search**: Search for apps in real-time with instant results.
+- **App Sorting**: Sort apps by size, ratings, or download count (ascending or descending).
+- **Install/Uninstall Simulation**: Simulate app installations and uninstallations.
+- **Persistent Storage**: Installed apps are stored in `localStorage` to persist across sessions.
+- **Responsive Design**: Fully responsive UI for mobile, tablet, laptop, and desktop.
+- **Realistic App Store UI/UX**: An intuitive and modern design inspired by popular app stores.
 
-## Technologies
+## Technologies Used
+
+### Front-end
 - HTML
 - Tailwind CSS & Daisy UI
 - JavaScript
-- React Js
+- React.js
 
-## Used Tools and Others
-- Google Fonts API
-- React Router
-- Lucide Icons
+### Back-end
+- **Node.js**
+- **Express Server**
+- **MongoDB** (for storing app data)
+
+### Tools and Libraries
+- Google Fonts API: For stylish typography.
+- React Router: For routing between pages.
+- Lucide Icons: For scalable, vector-based icons.
 
 ## Project Timeline
 - Created on: 9 Oct 2025
 - Completed on: 18 Oct 2025
-- Last updated on: 19 Nov 2025
+- Last updated on: 24 Nov 2025
 
-## Installation / Running Locally
+## Installation Instructions
+To run the AppoVate application locally, follow these steps:
+
 1. Clone the repository:
    ```bash
    git clone https://github.com/nayem-ahmedz/appo-vate.git
@@ -47,6 +58,12 @@ Providing best Android and iOS apps
    ```bash
    npm run dev
    ```
+## For setting up backend
+The back-end for this project is in a separate repository. You can find it here:
+[Appovate Server Repo](https://appovate.netlify.app/)
+
+## Contributing
+Contributions are welcome! If you have suggestions for improvements, bug fixes, or new features, feel free to open an issue or submit a pull request.
 
 ## live link
 [Appovate Web](https://appovate.netlify.app/)

@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 function SearchBar({handleSearch}) {
     return (
         <label className="input">

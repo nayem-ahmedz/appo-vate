@@ -7,7 +7,7 @@ export default function AppGalleryLandscape({ dataPromise, updateAppsCount, sort
     const [apps, setApps] = useState([]);
     useEffect(() => {
         const cart = getCart();
-        const installedApp = data.filter(d => cart.includes(d._id));
+        const installedApp = data.apps.filter(d => cart.includes(d._id));
         updateAppsCount(installedApp.length);
         if(sortType === 'asc'){
             setApps(installedApp.sort((a, b) => a.downloads - b.downloads));

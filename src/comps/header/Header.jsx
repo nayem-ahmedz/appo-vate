@@ -3,13 +3,19 @@ import Logo from '../../assets/logo.png';
 import { Link } from 'react-router';
 
 export default function Header() {
-    const navLinks = [
-        { id: 1, url: '/', text: 'Home' },
-        { id: 2, url: '/apps', text: 'Apps' },
-        { id: 3, url: '/installation', text: 'Installation' }
-    ];
+    const user = false;
+    const navLinks = <>
+        <li> <NavLink to='/'>Home</NavLink> </li>
+        <li> <NavLink to='/apps'>Apps</NavLink> </li>
+        {
+            user && <li> <NavLink to='/installation'>Installation</NavLink> </li>
+        }
+        <li> <NavLink to='/support'>Support</NavLink> </li>
+        <li> <NavLink to='/about-us'>About us</NavLink> </li>
+        <li> <NavLink to='/contact'>Contact</NavLink> </li>
+    </>;
     return (
-        <header className="bg-white shadow-sm mb-10 md:mb-20">
+        <header className="bg-base-200 shadow-sm sticky top-0 z-10">
             <nav className="navbar containerr py-4">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -20,7 +26,7 @@ export default function Header() {
                             tabIndex={0}
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
                             {
-                                navLinks.map(link => <li key={link.id}><NavLink to={link.url}>{link.text}</NavLink></li>)
+                                navLinks
                             }
                         </ul>
                     </div>
@@ -32,12 +38,12 @@ export default function Header() {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         {
-                            navLinks.map(link => <li key={link.id}><NavLink to={link.url}>{link.text}</NavLink></li>)
+                            navLinks
                         }
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a href="https://github.com/nayem-ahmedz" target="_blank" rel="noopener noreferrer" className="btn primary-btn"> <i className="fa-brands fa-github"></i> Contribute</a>
+                    <Link to='/login' className="btn primary-btn"> <i className="fa-solid fa-user mr-2"></i> Login</Link>
                 </div>
             </nav>
         </header>

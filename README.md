@@ -33,11 +33,12 @@ Showcase Your Apps with Style
 - Google Fonts API: For stylish typography.
 - React Router: For routing between pages.
 - Lucide Icons: For scalable, vector-based icons.
+- react-responsive-carousel : Carousel
 
 ## Project Timeline
 - Created on: 9 Oct 2025
 - Completed on: 18 Oct 2025
-- Last updated on: 24 Nov 2025
+- Last updated on: 4 Dec 2025
 
 ## Installation Instructions
 To run the AppoVate application locally, follow these steps:

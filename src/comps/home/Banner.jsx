@@ -16,8 +16,8 @@ export default function Banner() {
                         quasi. In deleniti eaque aut repudiandae et a id nisi.
                     </p>
                     <div className='flex justify-center gap-5 mb-10'>
-                        <a href='https://play.google.com/store/apps?hl=en' className="btn btn-primary btn-outline border-gray-300 h-auto w-auto px-5 py-3 text-base md:text-xl text-black hover:text-white"> <img src={PlayStore} alt="google playstore" /> Google Play</a>
-                        <a href='https://www.apple.com/app-store/' className="btn btn-primary btn-outline border-gray-300 h-auto w-auto px-5 py-3 text-base md:text-xl text-black hover:text-white"> <img src={AppStore} alt="google playstore" /> App Store</a>
+                        <a href='https://play.google.com/store/apps?hl=en' className="btn btn-primary btn-outline border-gray-300 h-auto w-auto px-5 py-3 text-base md:text-xl"> <img src={PlayStore} alt="google playstore" /> Google Play</a>
+                        <a href='https://www.apple.com/app-store/' className="btn btn-primary btn-outline border-gray-300 h-auto w-auto px-5 py-3 text-base md:text-xl"> <img src={AppStore} alt="google playstore" /> App Store</a>
                     </div>
                     <img src={HeroImg} alt='hero image' className='mx-auto' />
                 </div>

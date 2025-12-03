@@ -22,7 +22,7 @@ function App() {
   return (
     <>
       <Header />
-      <main className='grow-1'>
+      <main className='grow-1 pt-10'>
         <Outlet />
       </main>
       <ToastContainer

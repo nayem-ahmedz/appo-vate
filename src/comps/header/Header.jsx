@@ -1,9 +1,12 @@
 import { NavLink } from 'react-router';
 import Logo from '../../assets/logo.png';
 import { Link } from 'react-router';
+import { useContext } from 'react';
+import { AuthContext } from '../../context/AuthContext';
+import Swal from 'sweetalert2';
 
 export default function Header() {
-    const user = false;
+    const { user, logoutUser, loading } = useContext(AuthContext);
     const navLinks = <>
         <li> <NavLink to='/'>Home</NavLink> </li>
         <li> <NavLink to='/apps'>Apps</NavLink> </li>
@@ -14,6 +17,35 @@ export default function Header() {
         <li> <NavLink to='/about-us'>About us</NavLink> </li>
         <li> <NavLink to='/contact'>Contact</NavLink> </li>
     </>;
+    const handleLogout = () => {
+        Swal.fire({
+            title: "Are you sure to Logout?",
+            text: "You have to login again to get access!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, continue!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                logoutUser()
+                    .then(() => {
+                        Swal.fire({
+                            title: "Logged Out!",
+                            text: "You have successfully logged out.",
+                            icon: "success"
+                        });
+                    })
+                    .catch(error => {
+                        Swal.fire({
+                            title: "OPPS!",
+                            text: "Error loggin out.",
+                            icon: "error"
+                        });
+                    });
+            }
+        });
+    }
     return (
         <header className="bg-base-200 shadow-sm sticky top-0 z-10">
             <nav className="navbar containerr py-4">
@@ -43,7 +75,29 @@ export default function Header() {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <Link to='/login' className="btn primary-btn"> <i className="fa-solid fa-user mr-2"></i> Login</Link>
+                    <div className='flex items-center gap-4'>
+                        {
+                            loading ? <span className="loading loading-dots loading-xl mr-5"></span> : user ?
+                                <>
+                                    <div className="avatar cursor-pointer">
+                                        <div className="ring-primary ring-offset-base-100 w-12 rounded-full ring-2 ring-offset-2">
+                                            <img
+                                                src={user.photoURL}
+                                                className="w-full"
+                                                alt="user profile"
+                                                onError={e => {
+                                                    e.target.onerror = null;
+                                                    e.target.src = '/placeholder-image.jpg';
+                                                }}
+                                            />
+                                        </div>
+                                    </div>
+                                    <button className='btn btn-error btn-outline' onClick={handleLogout}>Logout</button>
+                                </>
+                                :
+                                <Link to='/login' className="btn primary-btn"> <i className="fa-solid fa-user mr-2"></i> Login</Link>
+                        }
+                    </div>
                 </div>
             </nav>
         </header>

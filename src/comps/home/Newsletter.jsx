@@ -1,6 +1,6 @@
 export default function Newsletter() {
     return (
-        <section className="py-10 text-center">
+        <section className="pb-10 text-center">
             <img src='/media/mail-icon.png' alt='mail logo' className="w-full max-w-xs mx-auto" />
             <h3 className="text-3xl font-bold">Subscribe Newsletter</h3>
             <p className="max-w-sm mx-auto mt-4 mb-6">Get notification for every new App release? Opt in for daily mail by signing up below</p>

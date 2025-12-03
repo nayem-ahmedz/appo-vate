@@ -1,15 +1,17 @@
-import { useLoaderData, useNavigate, useParams } from "react-router";
+import { Link, useLoaderData, useNavigate, useParams } from "react-router";
 import DwIcon from '../assets/icon-downloads.png';
 import StarIcon from '../assets/icon-ratings.png';
 import RvIcon from '../assets/icon-review.png';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer } from 'recharts';
 import AppErrorImage from '../assets/App-Error.png';
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { toast } from 'react-toastify';
 import { addToCart, getCart } from "../comps/utils/manageLocalStorage";
+import { AuthContext } from "../context/AuthContext";
 
 export default function AppDetails() {
     const app = useLoaderData();
+    const { user } = useContext(AuthContext);
     if (app._id) {
         const [installed, setInstalled] = useState(getCart().includes(app._id));
         const totalRatings = app.ratings.reduce((sum, rate) => sum + rate.count, 0);
@@ -57,9 +59,15 @@ export default function AppDetails() {
                                 <div className="stat-value text-3xl md:text-[40px]">132+</div>
                             </div>
                         </div>
-                        <button className="btn bg-[#00D390] text-white mt-7 hover:bg-green-700" onClick={handleInstall} disabled={installed}>
-                            {installed ? 'Installed' : `Install Now (${app.size} MB)`}
-                        </button>
+                        {
+                            user ? <button className="btn bg-[#00D390] text-white mt-7 hover:bg-green-700" onClick={handleInstall} disabled={installed}>
+                                {
+                                    installed ? 'Installed' : `Install Now (${app.size} MB)`
+                                }
+                            </button> : <Link to='/login' className="btn bg-[#00D390] text-white mt-7 hover:bg-green-700">
+                                <i className="fa-solid fa-lock"></i> Login to Install
+                            </Link>
+                        }
                     </div>
 
                 </div>
@@ -86,13 +94,13 @@ export default function AppDetails() {
                 <div className="mt-8">
                     <h3 className="text-2xl font-semibold mb-4">Description</h3>
                     <p className="md:text-xl/8 text-[#627382]">
-                        { app.description }
+                        {app.description}
                         <br />
                         <br />
-                        { app.description.split(' ').reverse().join(' ') }
+                        {app.description.split(' ').reverse().join(' ')}
                         <br />
                         <br />
-                        { app.description }
+                        {app.description}
                     </p>
                 </div>
             </section>

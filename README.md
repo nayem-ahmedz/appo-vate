@@ -23,6 +23,7 @@ Showcase Your Apps with Style
 - Tailwind CSS & Daisy UI
 - JavaScript
 - React.js
+- firebase auth
 
 ### Back-end
 - Node.js
@@ -34,6 +35,9 @@ Showcase Your Apps with Style
 - React Router: For routing between pages.
 - Lucide Icons: For scalable, vector-based icons.
 - react-responsive-carousel : Carousel
+- motion : animation
+- sweet alert
+- toast notification
 
 ## Project Timeline
 - Created on: 9 Oct 2025
